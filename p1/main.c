@@ -4,7 +4,7 @@ int main(){
     scanf("%d", &a);
 
     do{
-        scanf("%d", &a);
+        scanf("%d", &b);
         i++;
         
         if(a<b){
