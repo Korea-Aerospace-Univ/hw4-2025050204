@@ -2,7 +2,7 @@
 
 int main(void){
     int n;
-    char answkd[100];
+    char answkd;
 
     scanf("%d", &n);
     scanf("%s", answkd);
@@ -11,15 +11,14 @@ int main(void){
     int nows=0, nowc=0; // 각각 지금 세고 있는 소문자, 숫자
 
     for(int i = 0; i < n; i++){
-        char c = answkd[i];
-        if (c >= 'a' && c <= 'z'){
+        if (answkd >= 'a' && answkd <= 'z'){
             nows++;
             nowc=0;
             if(nows>maxs){
                 maxs=nows;
             }
         }
-        else if(c >= '0' && c<= '9'){
+        else if(answkd >= '0' && answkd<= '9'){
             nows=0;
             nowc++;
             if(nowc>maxc){
