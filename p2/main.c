@@ -5,7 +5,7 @@ int main(void){
     char answkd;
 
     scanf("%d", &n);
-    scanf("%s", answkd);
+    scanf("%c", answkd);
 
     int maxs=0, maxc=0; // 각각 제일 많은 소문자, 숫자 의미 
     int nows=0, nowc=0; // 각각 지금 세고 있는 소문자, 숫자
