@@ -1,43 +1,36 @@
 #include <stdio.h>
 
-int main() {
-    int n, e=0, c=0; 
-    char answkd = [100]; 
-    int legende=0, legendc=0; 
+int main(void){
+    int n;
+    char answkd[100];
 
-    
     scanf("%d", &n);
-    scanf("%s",&answkd);
+    scanf("%s", answkd);
 
-    
-    for (int i = 0; i < n; i++) {
-        char a = answkd[i]; 
+    int maxs=0, maxc=0; // 각각 제일 많은 소문자, 숫자 의미 
+    int nows=0, nowc=0; // 각각 지금 세고 있는 소문자, 숫자
 
-       
-        if (a>= 'a' && a <= 'z') { //영어 소문자라면 e하나 올리고 c는 0으로 초기화
-            e++;      
-            c = 0;  
-            if(e > legende){
-                legende=e;
+    for(int i = 0; i < n; i++){
+        char c = answkd[i];
+        if (c >= 'a' && c <= 'z'){
+            nows++;
+            nowc=0;
+            if(nows>maxs){
+                maxs=nows;
             }
         }
-        else if (a>= '0' && a <= '9') { //숫자라면 e초기화, c 하나 올리기
-            c++;     
-            e = 0;   
-            if(c>legendc){
-                legendc=c;
+        else if(c >= '0' && c<= '9'){
+            nows=0;
+            nowc++;
+            if(nowc>maxc){
+                maxc=nowc;
             }
-
-            
         }
-        else { // 둘 다 아니면
-            e= 0;   //연속성 끊기니까 둘 다 0으로 초기화 시켜줌
-            c= 0;
+        else{
+            nows=0;
+            nowc=0;
         }
     }
-
-    printf("%d\n",legende);
-    printf("%d\n",legendc); // 제일 큰 연속 횟수 만들어서 넣기...
-
-    return 0;
+    printf("%d\n", maxs);
+    printf("%d", maxc);
 }
